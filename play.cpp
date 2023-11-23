@@ -87,20 +87,25 @@ void init() {
 	printf("└");
 	for(int i = 1; i <= column - 2; i++) printf("─┴");
 	printf("─┘");
+
 	setxy(3, 2 * column + 4);
 	setcolor(board_c, text_c);
 	printf("Size: %d×%d", row, column);
+
 	setxy(4, 2 * column + 4);
 	setcolor(board_c, text_c);
 	printf("Player 1: ");
 	setcolor(board_c, player1_c);
 	printf("%s", player1_ch);
+	setcolor(board_c, text_c);
 	printf("   Seed：%d", sd1);
+
 	setxy(5, 2 * column + 4);
 	setcolor(board_c, text_c);
 	printf("Player 2: ");
 	setcolor(board_c, player2_c);
 	printf("%s", player2_ch);
+	setcolor(board_c, text_c);
 	printf("   Seed：%d", sd2);
 }
 
@@ -116,10 +121,10 @@ void prompt(const char *text) {
 	setxy(7, 2 * column + 4);
 	setcolor(board_c, text_c);
 	if(!text) printf("                              ");
-	else printf("Hint: %s", text);
+	else printf("Info: %s", text);
 }
 void change_prompt(char c) {
-	setxy(7, 2 * column + 15);
+	setxy(7, 2 * column + 26);
 	setcolor(board_c, text_c);
 	putchar(c);
 }
@@ -154,6 +159,7 @@ int main() {
 	int winner = 0, crash = 0, piece_count = 0;
 	Player1::init(row, column, first_player == 1, sd1);
 	Player2::init(row, column, first_player == 2, sd2);
+	prompt("Now it's player 2's turn");
 	std::pair<int, int> last = {-1, -1}, now;
 	if(first_player == 2) {
 		now = Player2::put_piece(last);
