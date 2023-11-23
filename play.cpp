@@ -42,10 +42,10 @@ void read_config() {
 		std::ifstream config_file("config.json");
 		json config;
 		config_file >> config;
-		if(config["behavior"]["row"] == 0) row = rand(config["behavior"]["row-bound"][0], config["behavior"]["row-bound"][1]);
+		if(config["behavior"]["row"] == 0) row = rand(config["behavior"]["row_bound"][0], config["behavior"]["row_bound"][1]);
 		else row = config["behavior"]["row"];
 		quit((row == 0) || (5 <= row && row <= 999), "ERROR in config.json", "row should be either equal to 0 or between 5 and 999.");
-		if(config["behavior"]["column"] == 0) column = rand(config["behavior"]["column-bound"][0], config["behavior"]["column-bound"][1]);
+		if(config["behavior"]["column"] == 0) column = rand(config["behavior"]["column_bound"][0], config["behavior"]["column_bound"][1]);
 		else column = config["behavior"]["column"];
 		quit((column == 0) || (5 <= column && column <= 999), "ERROR in config.json", "column should be either equal to 0 or between 5 and 999.");
 		if(config["behavior"]["first"] == 0) first_player = rand(1, 2);
@@ -107,6 +107,10 @@ void init() {
 	printf("%s", player2_ch);
 	setcolor(board_c, text_c);
 	printf("   Seed：%d", sd2);
+
+	setxy(6, 2 * column + 4);
+	setcolor(board_c, text_c);
+	printf("First mover: %d", first_player);
 }
 
 bool put_piece(int r, int c, int t) {

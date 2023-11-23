@@ -5,8 +5,8 @@
 		"win": 5,
 		"first": 0,
 		"speed": 100000,
-		"row-bound": [10, 20],
-		"column-bound": [10, 20],
+		"row_bound": [10, 20],
+		"column_bound": [10, 20],
                 "player1_seed": 0,
                 "player2_seed": 0
 	},
