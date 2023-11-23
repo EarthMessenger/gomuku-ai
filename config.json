@@ -1,0 +1,21 @@
+{
+	"behavior": {
+		"row": 19,
+		"column": 19,
+		"win": 5,
+		"first": 0,
+		"speed": 100000,
+		"row-bound": [10, 20],
+		"column-bound": [10, 20],
+                "player1_seed": 0,
+                "player2_seed": 0
+	},
+	"theme": {
+		"background": 49,
+		"board": 33,
+		"line": 39,
+		"player1": 95,
+		"player2": 96,
+		"text": 39
+	}
+}

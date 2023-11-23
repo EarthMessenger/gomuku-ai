@@ -1,0 +1,21 @@
+{
+	"behavior": {
+		"row": 0, // the number of rows (integer, 5~999, or 0 means a random number each time)
+		"column": 0, // the number of columns (integer, 5~999, or 0 means a random number each time)
+		"win": 5, // the number of pieces for the players to win. (integer, 5~999)
+		"first": 1, // the first player's number (integer, 1 or 2, or 0 means a random number each time)
+		"speed": 100, // the time (minisecond) to wait each time when a player put a piece. (>=0, integer)
+		"row-bound": [10, 20], // the [lowerbound, upperbound] of row ([integer >=0, integer >=0], [0] <= [1] should be hold, used only when `row` is 0)
+		"column-bound": [10, 20], // the [lowerbound, upperbound] of row ([integer >=0, integer >=0], [0] <= [1] should be hold, used only when `row` is 0)
+		"player1_seed": 0, // the seed used for player 1 (integer, positive or negative, or 0 means a random number each time)
+		"player2_seed": 0 // the seed used for player 2 (integer, positive or negative, or 0 means a random number each time)
+	},
+	"theme": {
+		"background": 6, // the color of the whole background (integer, only foreground)
+		"board": 6, // the color of the board (integer, only background)
+		"line": 0, // the color of the lines (integer, only foreground)
+		"player1": 0, // the color of player 1 (integer, only foreground)
+		"player2": 15, // the color of player 2 (integer, only foreground)
+		"text": 0 // the color of the text (integer, only foreground)
+	}
+}
